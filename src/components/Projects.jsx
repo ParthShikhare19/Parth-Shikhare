@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { FiGithub, FiExternalLink, FiCode } from "react-icons/fi";
 import employeeMSImage from "../assets/VBM.jpeg";
 import flask from "../assets/flask.webp";
-import budgetImg from "../assets/Pennyplanner.jpg";
+import budgetImg from "../assets/pennyplanner.jpg";
 import nexus from "../assets/Dash.png";
 import speed from "../assets/speed.png";
 import weather from "../assets/weather.png";
