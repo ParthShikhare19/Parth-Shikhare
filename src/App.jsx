@@ -12,7 +12,7 @@ import Education from './components/Education'
 function App() {
 
   return (
-    <div>
+    <div className="bg-white dark:bg-slate-950 transition-colors duration-300">
         <Navbar />
         <Hero />
         <About />
