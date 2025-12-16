@@ -1,5 +1,5 @@
 import React, { useEffect, useState, Suspense, lazy } from 'react';
-import HeroImage from '../assets/main-image.jpg';
+import HeroImage from '../assets/Main-Image.jpg';
 import { motion } from 'framer-motion';
 import { FiDownload, FiGithub, FiLinkedin, FiMail } from 'react-icons/fi';
 
@@ -178,7 +178,6 @@ function buildAmazingThings() {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="flex items-center justify-center gap-2 border-2 border-primary-600 dark:border-primary-500 text-primary-600 dark:text-white font-semibold px-6 sm:px-8 py-3 sm:py-4 rounded-lg hover:bg-primary-50 dark:hover:bg-primary-500/10 transition-all duration-300 w-full sm:w-auto"
-              >
               >
                 View Projects
               </motion.a>
