@@ -162,7 +162,7 @@ function buildAmazingThings() {
               className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4"
             >
               <motion.a
-                href="public/parth_resume.pdf"
+                href="public/ParthShikhare_Resume.pdf"
                 download
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
