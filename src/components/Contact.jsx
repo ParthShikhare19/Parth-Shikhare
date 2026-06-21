@@ -136,7 +136,7 @@ const Contact = () => {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1 }}
-                  whileHover={{ scale: 1.02, x: 10 }}
+                  whileHover={{ scale: 1.02, x: 10, transition: { type: "spring", stiffness: 400, damping: 25 } }}
                   className="bg-white dark:bg-slate-800/50 backdrop-blur-sm p-6 rounded-xl flex items-center gap-4 cursor-pointer group border border-slate-300 dark:border-slate-700 shadow-md hover:shadow-xl transition-all"
                 >
                   <div className="w-12 h-12 bg-primary-500 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
@@ -166,9 +166,8 @@ const Contact = () => {
                     href={social.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    whileHover={{ scale: 1.2, rotate: 360 }}
+                    whileHover={{ scale: 1.2, transition: { type: "spring", stiffness: 500, damping: 30 } }}
                     whileTap={{ scale: 0.9 }}
-                    transition={{ duration: 0.3 }}
                     className="w-12 h-12 bg-white dark:bg-slate-800 rounded-full flex items-center justify-center text-slate-700 dark:text-white hover:bg-primary-500 hover:text-white border border-slate-300 dark:border-slate-700 transition-all duration-300 shadow-md"
                   >
                     {social.icon}

@@ -14,7 +14,7 @@ const About = () => {
   const stats = [
     { icon: <FiCode size={32} />, value: "2+", label: "Years Experience", color: "from-primary-400 to-primary-600" },
     { icon: <FiAward size={32} />, value: "15+", label: "Projects Completed", color: "from-accent-400 to-accent-600" },
-    { icon: <FiUsers size={32} />, value: "5+", label: "Technologies", color: "from-blue-400 to-blue-600" },
+    { icon: <FiUsers size={32} />, value: "16+", label: "Technologies", color: "from-blue-400 to-blue-600" },
   ];
 
   const skills = [
@@ -102,10 +102,10 @@ const About = () => {
                     duration: 0.3,
                     ease: [0.25, 0.46, 0.45, 0.94]
                   }}
-                  whileHover={{ 
-                    scale: 1.05, 
+                  whileHover={{
+                    scale: 1.05,
                     y: -5,
-                    transition: { type: "spring", stiffness: 500, damping: 15, duration: 0.2 }
+                    transition: { type: "spring", stiffness: 500, damping: 28 }
                   }}
                   className="bg-slate-100 dark:bg-slate-800 backdrop-blur-sm p-5 rounded-xl hover:bg-primary-600 dark:hover:bg-slate-700 border-2 border-slate-300 dark:border-slate-700 transition-all duration-200 cursor-pointer group shadow-md hover:shadow-xl"
                 >

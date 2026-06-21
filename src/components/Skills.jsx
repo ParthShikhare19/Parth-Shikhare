@@ -207,7 +207,7 @@ const Skills = () => {
             <motion.button
               key={category}
               onClick={() => setActiveCategory(category)}
-              whileHover={{ scale: 1.05 }}
+              whileHover={{ scale: 1.05, transition: { type: "spring", stiffness: 500, damping: 30 } }}
               whileTap={{ scale: 0.95 }}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: inView ? 1 : 0, y: inView ? 0 : 20 }}

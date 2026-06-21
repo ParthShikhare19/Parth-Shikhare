@@ -1,10 +1,8 @@
-import React, { useEffect, useState, Suspense, lazy } from 'react';
+import React, { useEffect, useState } from 'react';
 import HeroImage from '../assets/Main-Image.jpg';
 import { motion } from 'framer-motion';
 import { FiDownload, FiGithub, FiLinkedin, FiMail } from 'react-icons/fi';
-
-// Lazy load the heavy 3D component
-const TechCube = lazy(() => import('./TechCube'));
+import CodeTerminal from './CodeTerminal';
 
 const Hero = () => {
   const [typedText, setTypedText] = useState('');
@@ -175,7 +173,7 @@ function buildAmazingThings() {
 
               <motion.a
                 href="#projects"
-                whileHover={{ scale: 1.05 }}
+                whileHover={{ scale: 1.05, transition: { type: "spring", stiffness: 400, damping: 25 } }}
                 whileTap={{ scale: 0.95 }}
                 className="flex items-center justify-center gap-2 border-2 border-primary-600 dark:border-primary-500 text-primary-600 dark:text-white font-semibold px-6 sm:px-8 py-3 sm:py-4 rounded-lg hover:bg-primary-50 dark:hover:bg-primary-500/10 transition-all duration-300 w-full sm:w-auto"
               >
@@ -224,25 +222,16 @@ function buildAmazingThings() {
             </motion.div>
           </motion.div>
 
-          {/* Right Content - Interactive 3D Tech Stack */}
+          {/* Right Content - Animated Code Terminal */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
+            initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6, delay: 0.1, ease: [0.25, 0.46, 0.45, 0.94] }}
             className="flex justify-center items-center"
           >
             <div className="relative w-full">
               <div className="absolute inset-0 bg-primary-500/10 rounded-full blur-3xl" />
-              <Suspense fallback={
-                <div className="w-full h-[500px] flex items-center justify-center">
-                  <div className="text-center">
-                    <div className="w-16 h-16 border-4 border-primary-500 border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
-                    <p className="text-gray-400">Loading experience...</p>
-                  </div>
-                </div>
-              }>
-                <TechCube />
-              </Suspense>
+              <CodeTerminal />
             </div>
           </motion.div>
         </div>

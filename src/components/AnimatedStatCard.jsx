@@ -55,19 +55,18 @@ export default function AnimatedStatCard({ stat, index, inView }) {
         duration: 0.4,
         ease: [0.25, 0.46, 0.45, 0.94]
       }}
-      whileHover={{ 
-        scale: 1.03, 
+      whileHover={{
+        scale: 1.03,
         y: -8,
-        transition: { duration: 0.2 }
+        transition: { type: "spring", stiffness: 400, damping: 25 }
       }}
       className="bg-white dark:bg-slate-800/50 backdrop-blur-sm p-8 rounded-2xl text-center group hover:shadow-2xl hover:shadow-primary-500/20 hover:border-primary-500/50 border border-slate-300 dark:border-slate-700 transition-all duration-300"
     >
       <motion.div 
         className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary-600 mb-4"
-        whileHover={{ 
-          scale: 1.1, 
-          rotate: 360,
-          transition: { duration: 0.6 }
+        whileHover={{
+          scale: 1.15,
+          transition: { type: "spring", stiffness: 500, damping: 30 }
         }}
       >
         <div className="text-white">{stat.icon}</div>
@@ -85,7 +84,7 @@ export default function AnimatedStatCard({ stat, index, inView }) {
       <motion.div
         className="mt-3 h-1 bg-primary-500/0 group-hover:bg-primary-500 rounded-full transition-all duration-300"
         initial={{ width: 0 }}
-        whileHover={{ width: "100%" }}
+        whileHover={{ width: "100%", transition: { duration: 0.25, ease: "easeOut" } }}
       />
     </motion.div>
   );

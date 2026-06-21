@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { FiGithub, FiExternalLink, FiCode } from "react-icons/fi";
+import { FiGithub, FiCode } from "react-icons/fi";
 import employeeMSImage from "../assets/VBM.jpeg";
 import flask from "../assets/flask.webp";
 import budgetImg from "../assets/pennyplanner.jpg";
@@ -112,7 +112,7 @@ const Projects = () => {
             <motion.button
               key={category}
               onClick={() => setFilter(category)}
-              whileHover={{ scale: 1.05 }}
+              whileHover={{ scale: 1.05, transition: { type: "spring", stiffness: 500, damping: 30 } }}
               whileTap={{ scale: 0.95 }}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -121,7 +121,7 @@ const Projects = () => {
               className={`px-8 py-3 rounded-lg font-semibold transition-all duration-300 ${
                 filter === category
                   ? 'bg-primary-500 text-white shadow-lg shadow-primary-500/50'
-                  : 'bg-slate-800 text-gray-300 hover:bg-slate-700'
+                  : 'bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-gray-300 hover:bg-slate-200 dark:hover:bg-slate-700 border border-slate-300 dark:border-slate-700'
               }`}
             >
               {category}
@@ -147,10 +147,10 @@ const Projects = () => {
                   delay: index * 0.05,
                   ease: [0.25, 0.46, 0.45, 0.94]
                 }}
-                whileHover={{ 
-                  y: -15,
+                whileHover={{
+                  y: -8,
                   scale: 1.02,
-                  transition: { duration: 0.3, ease: "easeOut" }
+                  transition: { type: "spring", stiffness: 350, damping: 25 }
                 }}
                 onHoverStart={() => setHoveredId(project.id)}
                 onHoverEnd={() => setHoveredId(null)}
@@ -178,19 +178,12 @@ const Projects = () => {
                       href={project.github}
                       target="_blank"
                       rel="noopener noreferrer"
-                      whileHover={{ scale: 1.2, rotate: 360 }}
+                      whileHover={{ scale: 1.2, transition: { type: "spring", stiffness: 500, damping: 30 } }}
                       whileTap={{ scale: 0.9 }}
                       className="w-14 h-14 flex items-center justify-center rounded-full bg-white/10 backdrop-blur-md border border-white/20 hover:bg-white/20 transition-all"
                     >
                       <FiGithub size={24} />
                     </motion.a>
-                    <motion.div
-                      whileHover={{ scale: 1.2, rotate: 360 }}
-                      whileTap={{ scale: 0.9 }}
-                      className="w-14 h-14 flex items-center justify-center rounded-full bg-white/10 backdrop-blur-md border border-white/20 hover:bg-white/20 transition-all cursor-pointer"
-                    >
-                      <FiExternalLink size={24} />
-                    </motion.div>
                   </motion.div>
                 </div>
 

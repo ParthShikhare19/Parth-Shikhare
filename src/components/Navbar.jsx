@@ -33,12 +33,11 @@ const Navbar = () => {
     <motion.nav
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
-      transition={{ 
-        type: 'spring', 
-        stiffness: 100, 
+      transition={{
+        type: 'spring',
+        stiffness: 100,
         damping: 20,
         delay: 0.1,
-        ease: [0.25, 0.46, 0.45, 0.94]
       }}
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ease-out ${
         scrolled 
@@ -72,7 +71,7 @@ const Navbar = () => {
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 * index }}
-              whileHover={{ scale: 1.05 }}
+              whileHover={{ scale: 1.05, transition: { type: 'spring', stiffness: 500, damping: 30 } }}
               whileTap={{ scale: 0.95 }}
               className={`relative group ${darkMode ? 'text-gray-200' : 'text-gray-800'}`}
             >
@@ -99,9 +98,8 @@ const Navbar = () => {
           {/* Theme Toggle */}
           <motion.button
             onClick={() => setDarkMode(!darkMode)}
-            whileHover={{ scale: 1.1 }}
+            whileHover={{ scale: 1.1, transition: { type: 'spring', stiffness: 500, damping: 30 } }}
             whileTap={{ scale: 0.9, rotate: 180 }}
-            transition={{ type: 'spring', stiffness: 300 }}
             className={`w-10 h-10 flex items-center justify-center rounded-full ${
               darkMode ? 'bg-dark-800 text-yellow-400' : 'bg-gray-200 text-gray-800'
             } hover:shadow-lg transition-all duration-300`}
