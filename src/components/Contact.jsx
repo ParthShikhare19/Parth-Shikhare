@@ -43,10 +43,10 @@ const Contact = () => {
 
     emailjs
       .sendForm(
-        "service_123456",
-        "template_123456",
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
         form.current,
-        "3D-pyZPI6cgPry8e6"
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
       )
       .then(
         (result) => {
@@ -55,6 +55,7 @@ const Contact = () => {
           setTimeout(() => setSuccessMessage(""), 5000);
         },
         (error) => {
+          console.error("EmailJS send failed:", error);
           setSuccessMessage("error");
           setTimeout(() => setSuccessMessage(""), 5000);
         }
